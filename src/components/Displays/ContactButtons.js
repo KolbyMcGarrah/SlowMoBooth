@@ -8,26 +8,19 @@ export class ContactButtons extends Component {
     }
     twitSubmit = e => {
         e.preventDefault()
-        this.props.displayForm("Twitter")
-    }
-    mailSubmit = e => {
-        e.preventDefault()
-        this.props.displayForm("Email")
+        this.props.displayForm("twitter")
     }
     fbSubmit = e => {
         e.preventDefault()
-        this.props.displayForm("Facebook")
+        this.props.displayForm("facebook")
     }
     instaSubmit = e => {
         e.preventDefault()
-        this.props.displayForm("Instagram")
+        this.props.displayForm("instagram")
     }
     render() {
         return (
-            <div className="btn-group" style={{textAlign:"center"}} role="group" aria-label="Basic example">
-                <form onSubmit={this.mailSubmit}>
-                    <button type="submit" className="btn btn-outline-light mx-1"><i className="far fa-envelope mx-1"></i>Email</button>
-                </form>
+            <div className="btn-group mt-3" role="group" aria-label="Basic example">
                 <form onSubmit={this.twitSubmit}>
                     <button type="submit" className="btn btn-outline-info mx-1"><i className="fab fa-twitter mx-1"></i>Twitter</button>
                 </form>

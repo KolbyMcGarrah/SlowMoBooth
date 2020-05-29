@@ -42,7 +42,7 @@ router.put('/update',(req,res) => {
         twitterAccounts:twitter,
         emailList:email
     }
-    Event.findByIdAndUpdate(body.id,{contactList:contactList, active:false},function(err, response){
+    Event.findByIdAndUpdate(body.id,{contactList:contactList},function(err, response){
         if (err){
             console.log(err)
         }
