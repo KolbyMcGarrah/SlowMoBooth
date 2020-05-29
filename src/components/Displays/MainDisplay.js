@@ -12,6 +12,7 @@ export class MainDisplay extends Component {
         twitter: PropTypes.array.isRequired,
         facebook: PropTypes.array.isRequired,
         email: PropTypes.array.isRequired,
+        resetWelcome: PropTypes.func.isRequired
     }
 
     state = {
@@ -41,11 +42,9 @@ export class MainDisplay extends Component {
         const twitter = this.props.twitter
         const email = this.props.email
         const id = this.props.event._id
-        console.log('here')
         const body = JSON.stringify({instagram,facebook,twitter,email,id})
         const config = { headers: {'Content-Type': 'application/json'} }
-        console.log(config)
-        console.log(body)
+        this.props.resetWelcome()
         axios.put(`http://localhost:8000/events/update`,body,config)
     }
  

@@ -32,23 +32,33 @@ router.post('/add',(req,res) => {
 router.put('/update',(req,res) => {
     body = req.body
     console.log(body)
-    const facebook = body.facebook
-    const twitter = body.twitter
-    const instagram = body.instagram
-    const email = body.email
-    const contactList = {
-        facebookAccounts:facebook,
-        instagramAccounts:instagram,
-        twitterAccounts:twitter,
-        emailList:email
-    }
-    Event.findByIdAndUpdate(body.id,{contactList:contactList},function(err, response){
-        if (err){
-            console.log(err)
+    let newFacebook = body.facebook
+    let newTwitter = body.twitter
+    let newInstagram = body.instagram
+    let newEmail = body.email
+    Event.findById(body.id,function(err,event){
+        if(err){
+            res.status(400).json("Error"+err)
         }
         else{
-            console.log(response)
+                const facebook = newFacebook.concat(event.contactList.facebookAccounts)
+                const instagram = newInstagram.concat(event.contactList.instagramAccounts)
+                const twitter = newTwitter.concat(event.contactList.twitterAccounts)
+                const email = newEmail.concat(event.contactList.emailList)
+                const contactList = {
+                    facebookAccounts:facebook,
+                    instagramAccounts:instagram,
+                    twitterAccounts:twitter,
+                    emailList:email
+                }
+                console.log(contactList)
+                event.contactList = contactList
+                event.save()
+                res.json("Event Updated!")
         }
+    })
+    .catch(err => {
+        console.log(err)
     })
 })
 

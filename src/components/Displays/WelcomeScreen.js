@@ -23,7 +23,9 @@ export class WelcomeScreen extends Component {
         this.setState({begin:true})
         
     }
-
+    resetWelcome = () => {
+        this.setState({begin:false})
+    }
 
     render() {
         const welcome = (
@@ -39,7 +41,7 @@ export class WelcomeScreen extends Component {
         )
         return (
             <Fragment>
-                {this.state.begin ? <MainDisplay event={this.props.event}/> : welcome}
+                {this.state.begin ? <MainDisplay event={this.props.event} resetWelcome={this.resetWelcome}/> : welcome}
             </Fragment>
         )
     }
