@@ -64,7 +64,7 @@ export class MainDisplay extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row" style={{flexShrink:'0'}}>
+                    <div className="row" style={{flexShrink:'0',flexGrow:'0'}}>
                         {this.state.group.map((group,index) => (
                             <div key={group} className="col-md-8 offset-2">
                                 <div className="card">

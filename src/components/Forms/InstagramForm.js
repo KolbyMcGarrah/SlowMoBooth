@@ -43,7 +43,6 @@ export class InstagramForm extends Component {
         const {instagram,added} = this.state
         const edit = (
             <form className="form-inline" onSubmit={this.onSubmit}>
-                <label className="mr-1">Instagram</label>
                 <input 
                     type="text" 
                     className="form-control mr-1" 

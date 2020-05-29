@@ -16,8 +16,8 @@ export class FormController extends Component {
     render() {
         return (
                 <Fragment>
+                {this.props.facebookDisplay ? <FacebookForm displayForm={this.props.displayForm} /> : <Fragment /> }
                     {this.props.twitterDisplay ? <TwitterForm displayForm={this.props.displayForm} /> : <Fragment /> }
-                    {this.props.facebookDisplay ? <FacebookForm displayForm={this.props.displayForm} /> : <Fragment /> }
                     {this.props.instagramDisplay ? <InstagramForm displayForm={this.props.displayForm} /> : <Fragment /> }
                 </Fragment>
         )

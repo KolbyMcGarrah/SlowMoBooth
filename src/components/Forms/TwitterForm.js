@@ -42,10 +42,9 @@ export class TwitterForm extends Component {
         const {twitter,added} = this.state
         const edit = (
             <form className="form-inline" onSubmit={this.onSubmit}>
-                <label className="mr-1">Twitter</label>
                 <input 
                     type="text" 
-                    className="form-control text-info mr-1 border-info"
+                    className="form-control mr-1"
                     placeholder="@TwitterHandle" 
                     name="twitter"
                     value={twitter}

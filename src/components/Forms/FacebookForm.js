@@ -43,10 +43,9 @@ export class FacebookForm extends Component {
         const {facebook,added} = this.state
         const edit = (
             <form className="form-inline" onSubmit={this.onSubmit}>
-                <label className="mr-1">Facebook</label>
                 <input 
                     type="text" 
-                    className="form-control text-primary mr-1 border-primary"
+                    className="form-control mr-1"
                     placeholder="Facebook Account"
                     name="facebook"
                     value={facebook}

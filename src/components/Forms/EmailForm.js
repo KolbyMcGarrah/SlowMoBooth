@@ -39,7 +39,6 @@ export class EmailForm extends Component {
         const {email} = this.state
         const form = (
             <form className="form-inline" onSubmit={this.onSubmit}>
-                <label className="mr-1">Email</label>
                 <input 
                     type="email" 
                     className="form-control mr-1"
