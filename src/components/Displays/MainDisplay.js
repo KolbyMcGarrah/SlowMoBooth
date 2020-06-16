@@ -35,6 +35,7 @@ export class MainDisplay extends Component {
         this.setState({group:tempGroup})
     }
 
+
     onSubmit = e => {
         e.preventDefault()
         const instagram = this.props.instagram
@@ -45,6 +46,7 @@ export class MainDisplay extends Component {
         const body = JSON.stringify({instagram,facebook,twitter,email,id})
         const config = { headers: {'Content-Type': 'application/json'} }
         this.props.resetWelcome()
+        axios.get("http://localhost:5500")
         axios.put(`http://localhost:8000/events/update`,body,config)
     }
  
